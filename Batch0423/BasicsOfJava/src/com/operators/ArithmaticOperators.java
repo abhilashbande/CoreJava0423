@@ -44,6 +44,30 @@ public class ArithmaticOperators {
 //		int no4 = --no3;
 //		System.out.println("Line 43 -> no3 = " + no3 + " no4 = " + no4);
 		
+//		// post
+//		// assign current value first then increment its value
+		int id = 10;
+		int student10 = id++;
+		
+		// post increment
+		// int student10 = id;
+		//	id = id + 1;
+		
+		System.out.println(student10 + " - " + id);
+		
+		
+//		// pre
+//		// increment its value first and then assign 
+		int id1 = 10;
+		int student11 = ++id1;
+		// post increment
+		//	id = id + 1;
+		// int student11 = id;
+		System.out.println(student11 + " - " + id1);
+		
+		
+		
+		
 		
 		
 	}
