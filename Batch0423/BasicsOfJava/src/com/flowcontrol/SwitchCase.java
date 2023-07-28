@@ -17,16 +17,16 @@ public class SwitchCase {
 		int age = 1;
 		float f = 1.5f;
 		switch (grade) {		
-		case 1:
+		case 'A':
 			System.out.println("You have 65+ marks");
 			System.out.println("You have 65+ marks");
 			System.out.println("You have 65+ marks");
 			break;
-		case 2:
+		case 'B':
 			System.out.println("You have 55+ marks");
 			break;
 			
-		case 3:
+		case 'C':
 			System.out.println("You have 45+ marks");
 			break;
 
