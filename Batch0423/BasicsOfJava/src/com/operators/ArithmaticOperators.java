@@ -1,6 +1,8 @@
 package com.operators;
 
 public class ArithmaticOperators {
+	
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -66,8 +68,13 @@ public class ArithmaticOperators {
 		System.out.println(student11 + " - " + id1);
 		
 		
+		// increment - decrement
+		// post 
+		// pre 
 		
-		
+		int no = 10;
+		int temp = ++no;	// post increment
+		System.out.println(no + " " + temp);
 		
 		
 	}

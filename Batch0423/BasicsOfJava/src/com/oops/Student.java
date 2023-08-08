@@ -1,73 +1,119 @@
 package com.oops;
 
 public class Student {
-	// data -> data members / properties
+	// data members -> properties
 
+	private static String trainerName;
+	public static int count = 0;
 	private int id;
-	private String name;
-	private float marks;
 	private String address;
+	private String name;
+	private double english;
+	private double science;
+	private double maths;
+	private double total;
+	// private double percentage;
 
-	// default
-	public Student() {
-		name = "undefined";
-		address = "undefined";
-		id = -1;
-		marks = -1.0f;
-	}
-
-	// parameterized
-	public Student(int id, String name, String address, float marks) {
-		this.name = name;
+	// member functions / methods / behaviour
+	public Student(int id, String name, String address) {
+		this.id = count;
 		this.address = address;
-		this.id = id;
-		this.marks = marks;
-	}
-
-	public Student(String name, String address, float marks) {
 		this.name = name;
-		this.address = address;
-		id = 0;
-		this.marks = marks;
+		this.english = 0.0;
+		this.science = 0.0;
+		this.maths = 0.0;
+		this.total = 0.0;
+		count++;
+		// this.percentage = 0.0;
 	}
 
-	// member functions
-	// setters/mutators
-	public void setMarks(float marks) {
-		if (marks > 100 || marks < 0) {
-			System.out.println("Error : Invalid marks!!!");
-			this.marks = -1.0f;
-			return;
-		}
-		this.marks = marks;
-	}
-
-	public void setId(int id) {
+	public Student(int id, String name) {
+		count++;
 		this.id = id;
+		this.name = name;
+		this.address = "";
+		this.english = 0.0;
+		this.science = 0.0;
+		this.maths = 0.0;
+		this.total = 0.0;
+		// this.percentage = 0.0;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	private void updateTotal() {
+		total = science + maths + english;
+		
+	}
+
+	// private void updatePercentage() {
+	// percentage = total/3.0;
+	// }
+
+	public String getAddress() {
+		return address;
 	}
 
 	public void setAddress(String address) {
 		this.address = address;
 	}
 
-	// getters/accessors
-	public String getAddress() {
-		return address;
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getEnglish() {
+		return english;
+	}
+
+	public void setEnglish(double english) {
+		this.english = english;
+		updateTotal();
+	}
+
+	public double getScience() {
+		return science;
+	}
+
+	public void setScience(double science) {
+		this.science = science;
+		updateTotal();
+	}
+
+	public double getMaths() {
+		return maths;
+	}
+
+	public void setMaths(double maths) {
+		this.maths = maths;
+		updateTotal();
 	}
 
 	public int getId() {
 		return id;
 	}
 
-	public String getName() {
-		return name;
+	public double getTotal() {
+		return total;
 	}
 
-	public float getMarks() {
-		return marks;
+	public static String getTrainerName() {
+		return trainerName;
 	}
+
+	public static void setTrainerName(String trainerName) {
+		Student.trainerName = trainerName;
+	}
+
+	// public double getPercentage() {
+	// return percentage;
+	// }
+
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", english=" + english + ", science=" + science + ", maths="
+				+ maths + ", total=" + total + "]";
+	}
+
 }
