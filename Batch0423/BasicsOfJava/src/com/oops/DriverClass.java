@@ -1,18 +1,10 @@
 package com.oops;
 
+import java.util.Scanner;
+
 public class DriverClass {
-
-	public static void volume(double h, double r) {
-
-	}
-
-	public static void volume(double s) {
-
-	}
-
 	public static void main(String[] args) {
 
-		
 		// TODO Auto-generated method stub
 
 		// class -> a template used to create objects
@@ -63,6 +55,22 @@ public class DriverClass {
 		// System.out.println(Student.getTrainerName()); // to call static methods we
 		// can use classname
 
+		Student s[] = new Student[3];
+		Scanner sc = new Scanner(System.in);
+		for (int i = 0; i < s.length; i++) {
+			System.out.print("Enter name of the student  : ");
+			String name = sc.next();
+			s[i] = new Student(i, name);
+		}
+
+//		for (int i = 0; i < s.length; i++) {
+//			System.out.println(s[i]);
+//		}
+
+		// for each
+		for (Student stud : s) {
+			System.out.println(stud);
+		}
 
 	}
 
