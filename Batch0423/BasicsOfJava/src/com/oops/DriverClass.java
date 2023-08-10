@@ -3,6 +3,7 @@ package com.oops;
 import java.util.Scanner;
 
 public class DriverClass {
+
 	public static void main(String[] args) {
 
 		// TODO Auto-generated method stub
@@ -55,22 +56,38 @@ public class DriverClass {
 		// System.out.println(Student.getTrainerName()); // to call static methods we
 		// can use classname
 
-		Student s[] = new Student[3];
-		Scanner sc = new Scanner(System.in);
-		for (int i = 0; i < s.length; i++) {
-			System.out.print("Enter name of the student  : ");
-			String name = sc.next();
-			s[i] = new Student(i, name);
-		}
+		// Student s[] = new Student[3];
+		// Scanner sc = new Scanner(System.in);
+		// for (int i = 0; i < s.length; i++) {
+		// System.out.print("Enter name of the student : ");
+		// String name = sc.next();
+		// s[i] = new Student(i, name);
+		// }
+		//
+		//// for (int i = 0; i < s.length; i++) {
+		//// System.out.println(s[i]);
+		//// }
+		//
+		// // for each
+		// for (Student stud : s) {
+		// System.out.println(stud);
+		// }
 
-//		for (int i = 0; i < s.length; i++) {
-//			System.out.println(s[i]);
-//		}
+		Student s1 = new Student("Saurabh");
+		Student s2 = new Student("Sehar");
 
-		// for each
-		for (Student stud : s) {
-			System.out.println(stud);
-		}
+		Student s3 = new Student("Vivek");
+		Student s4 = new Student("Rohit");
+
+		Student s5 = new Student();
+
+		 System.out.println(s1);
+		 System.out.println(s2);
+		 System.out.println(s3);
+		 System.out.println(s4);
+		 System.out.println(s5);
+
+		System.out.println("There are " + Student.getStudentCount() + " students in the class");
 
 	}
 
