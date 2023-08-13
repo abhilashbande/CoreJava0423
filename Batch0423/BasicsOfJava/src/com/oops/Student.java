@@ -46,4 +46,12 @@ public class Student {
 		return "Student [id=" + id + ", name=" + name + "]";
 	}
 
+	@Override
+	protected void finalize()  {
+		// TODO Auto-generated method stub
+		System.out.println("Cleaning Student object with name : " + this.name);
+		studentCount--;
+	}
+
+	
 }

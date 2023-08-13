@@ -73,19 +73,22 @@ public class DriverClass {
 		// System.out.println(stud);
 		// }
 
+		int i = 10;
+		
 		Student s1 = new Student("Saurabh");
 		Student s2 = new Student("Sehar");
 
-		Student s3 = new Student("Vivek");
-		Student s4 = new Student("Rohit");
+		
+		s2 =  s1;
 
-		Student s5 = new Student();
+		System.gc();
+		System.runFinalization();
 
-		 System.out.println(s1);
-		 System.out.println(s2);
-		 System.out.println(s3);
-		 System.out.println(s4);
-		 System.out.println(s5);
+		// System.out.println(s1);
+		// System.out.println(s2);
+		// System.out.println(s3);
+		// System.out.println(s4);
+		// System.out.println(s5);
 
 		System.out.println("There are " + Student.getStudentCount() + " students in the class");
 

@@ -1,24 +1,45 @@
 package com.oops.inheritance;
 
 public class HR extends Employee {
-	public double incentive;
-	public int noOfHires;
+	private int noOfHires;
+	private double incentive;
 
-	public HR() {
-		this.incentive = 0;
-		this.noOfHires = 0;
-		System.out.println("HR default ctor");
-	}
-
-	public HR(int id, String name, double salary, double incentive, int noOfHires) {
-		super(id, name, salary);
-		this.incentive = incentive;
+	public HR(String name, double salary, int noOfHires, double incentive) {
+		super(salary, name);
 		this.noOfHires = noOfHires;
-		System.out.println("HR parameterized ctor");
+		this.incentive = incentive;
 	}
 
+	public HR(String name, String address, double salary, int noOfHires, double incentive) {
+		super(salary, name, address);
+		this.noOfHires = noOfHires;
+		this.incentive = incentive;
+	}
+
+	public int getNoOfHires() {
+		return noOfHires;
+	}
+
+	public void setNoOfHires(int noOfHires) {
+		this.noOfHires = noOfHires;
+	}
+
+	public double getIncentive() {
+		return incentive;
+	}
+
+	public void setIncentive(double incentive) {
+		this.incentive = incentive;
+	}
+
+	@Override
 	public String toString() {
-		return "HR [incentive=" + incentive + ", noOfHires=" + noOfHires + "]";
+		return "HR [Name=" + getName() + ", Address=" + getAddress() + ", noOfHires=" + noOfHires + ", incentive="
+				+ incentive + ", Salary=" + getSalary() + ", EmpId=" + getEmpId() + "]";
 	}
-
+	
+	@Override
+	public double calculateSalary() {
+		return super.getSalary() + this.incentive * this.noOfHires;
+	}
 }
