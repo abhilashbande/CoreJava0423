@@ -1,18 +1,21 @@
 package com.oops.inheritance;
 
+// all classes will inherit Object class by default
+
 public class Person {
 	private String name;
 	private String address;
-	
+
+	public Person(String name) {
+		super();
+		this.name = name;
+		this.address = "Not defined";
+	}
+
 	public Person(String name, String address) {
 		super();
 		this.name = name;
 		this.address = address;
-	}
-	
-	public Person(String name) {
-		this.name = name;
-		this.address = "NA";
 	}
 
 	public String getName() {
@@ -30,4 +33,5 @@ public class Person {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
 }

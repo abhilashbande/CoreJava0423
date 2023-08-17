@@ -2,24 +2,31 @@ package com.oops.inheritance;
 
 public class Employee extends Person {
 	private int empId;
+	private static int nextId;
 	private double salary;
 
-	private static int empIdGenerator;
-
 	static {
-		empIdGenerator = 0;
+		nextId = 0;
 	}
 
-	public Employee(double salary, String name, String address) {
-		super(name, address);
-		this.salary = salary;
-		this.empId = ++empIdGenerator;
-	}
-	
-	public Employee(double salary, String name) {
+	public Employee(String name, double salary) {
 		super(name);
+		this.empId = ++nextId;
 		this.salary = salary;
-		this.empId = ++empIdGenerator;
+	}
+
+	public Employee(String name, String address, double salary) {
+		super(name, address);
+		this.empId = ++nextId;
+		this.salary = salary;
+	}
+
+	public static int getNextId() {
+		return nextId;
+	}
+
+	public static void setNextId(int nextId) {
+		Employee.nextId = nextId;
 	}
 
 	public double getSalary() {
@@ -34,17 +41,8 @@ public class Employee extends Person {
 		return empId;
 	}
 
-	public static int getEmpIdGenerator() {
-		return empIdGenerator;
-	}
-
-	@Override
-	public String toString() {
-		return "Employee [Name=" + getName() + ", Address()=" + getAddress() + "empId=" + empId + ", salary=" + salary
-				+ "]";
+	public double calculateSalary() {
+		return salary;
 	}
 	
-	public double calculateSalary() {
-		return this.salary;
-	}
 }

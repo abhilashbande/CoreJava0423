@@ -2,18 +2,18 @@ package com.oops.inheritance;
 
 public class HR extends Employee {
 	private int noOfHires;
-	private double incentive;
+	private double bonusPerHire;
 
-	public HR(String name, double salary, int noOfHires, double incentive) {
-		super(salary, name);
-		this.noOfHires = noOfHires;
-		this.incentive = incentive;
+	public HR(String name, String address, double salary, double bonusPerHire) {
+		super(name, address, salary);
+		this.noOfHires = 0;
+		this.bonusPerHire = bonusPerHire;
 	}
 
-	public HR(String name, String address, double salary, int noOfHires, double incentive) {
-		super(salary, name, address);
-		this.noOfHires = noOfHires;
-		this.incentive = incentive;
+	public HR(String name, double salary, double bonusPerHire) {
+		super(name, salary);
+		this.noOfHires = 0;
+		this.bonusPerHire = bonusPerHire;
 	}
 
 	public int getNoOfHires() {
@@ -22,24 +22,28 @@ public class HR extends Employee {
 
 	public void setNoOfHires(int noOfHires) {
 		this.noOfHires = noOfHires;
+		calculateSalary();
 	}
 
-	public double getIncentive() {
-		return incentive;
+	public double getBonusPerHire() {
+		return bonusPerHire;
 	}
 
-	public void setIncentive(double incentive) {
-		this.incentive = incentive;
+	public void setBonusPerHire(double bonusPerHire) {
+		this.bonusPerHire = bonusPerHire;
+		calculateSalary();
 	}
 
 	@Override
 	public String toString() {
-		return "HR [Name=" + getName() + ", Address=" + getAddress() + ", noOfHires=" + noOfHires + ", incentive="
-				+ incentive + ", Salary=" + getSalary() + ", EmpId=" + getEmpId() + "]";
+		return "HR [EmpId=" + getEmpId() + ", Name=" + getName() + ", Address=" + getAddress() + ", noOfHires="
+				+ noOfHires + ", bonusPerHire=" + bonusPerHire + ", Salary=" + getSalary() + "]";
 	}
-	
+
 	@Override
 	public double calculateSalary() {
-		return super.getSalary() + this.incentive * this.noOfHires;
+		double salaryAfterBonus = super.getSalary() + (this.bonusPerHire * this.noOfHires);
+		super.setSalary(salaryAfterBonus);
+		return salaryAfterBonus;
 	}
 }
