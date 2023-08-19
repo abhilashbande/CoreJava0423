@@ -1,88 +1,104 @@
 package com.oops.inheritance;
 
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class DriverClass {
+	private static Scanner sc = new Scanner(System.in);
+
+	private static int printMenu() {
+		System.out.println("1. Add new Manager");
+		System.out.println("2. Add new HR");
+		System.out.println("3. Display all employees");
+		System.out.println("4. Update number of hires for HR");
+		System.out.println("5. Update Name of an employee");
+		//System.out.println("6. Update Salary of an employee");
+		//System.out.println("7. Update Address of an employee");
+		System.out.println("0. Exit");
+		System.out.print("Enter your choice : ");
+		int choice = sc.nextInt();
+		return choice;
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);
 
-//		System.out.print("Enter number of managers to add :: ");
-//		int size = sc.nextInt();
-//
-//		Manager manager[] = new Manager[size];
-//
-//		for (int i = 0; i < manager.length; i++) {
-//			System.out.print("Enter name for manager :: ");
-//			String name = sc.next();
-//			System.out.print("Enter address for manager :: ");
-//			String address = sc.next();
-//			System.out.print("Enter salary for manager :: ");
-//			double salary = sc.nextDouble();
-//			manager[i] = new Manager(name, address, salary);
-//		}
-//		
-//		manager[0].calculateSalary();
-//
-//		System.out.println("\n*************************************\n");
-//		for (Manager m : manager) {
-//			System.out.println(m);
-//		}
-//
-//		System.out.print("Enter number of HRs to add :: ");
-//		size = sc.nextInt();
-//
-//		// create array for HR
-//		HR hr[] = new HR[size];
-//
-//		for (int i = 0; i < hr.length; i++) {
-//			System.out.print("Enter name for HR :: ");
-//			String name = sc.next();
-//			System.out.print("Enter address for HR :: ");
-//			String address = sc.next();
-//			System.out.print("Enter salary for HR :: ");
-//			double salary = sc.nextDouble();
-//			System.out.print("Enter incentive per fire for HR :: ");
-//			double incentive = sc.nextDouble();
-//			hr[i] = new HR(name, address, salary, incentive);
-//		}
-//		
-//		
-//		hr[0].setNoOfHires(2);
-//		
-//		
-//		//hr[1].setNoOfHires(5);
-//		//hr[1].calculateSalary();
-//		
-//		System.out.println("\n*************************************\n");
-//		for (HR h : hr) {
-//			System.out.println(h);
-//		}
-		
-		System.out.print("Enter number of employees to add :: ");
-		int size = sc.nextInt();
-		
-		Employee emp[] = new Employee[size];
-		
-		
-		
-		for (int i = 0; i < emp.length; i++) {
-			System.out.print("Enter name of the Employee :: ");
-			String name = sc.next();
-			System.out.print("Enter address of the Employee :: ");
-			String address = sc.next();
-			System.out.print("Enter salary of the Employee :: ");
-			double salary = sc.nextDouble();
-			
-			emp[i] = new HR(name, address, salary, 1000);
-		}
-		
-		for (Employee employee : emp) {
-			System.out.println(employee);
-		}
-		
+		int userChoice = 0;
+		Employee emp[] = new Employee[20];
+		int counter = 0;
+		int empId = 0, numberOfHires = 0;
+		String name = "";
+		double salary = 0, bonusPerHire = 0;
+
+		do {
+			userChoice = printMenu();
+			switch (userChoice) {
+			case 1:
+				// add new manager
+				System.out.print("\nEnter name of the manager : ");
+				name = sc.next();
+				System.out.print("Enter salary of the manager : ");
+				salary = sc.nextDouble();
+				emp[counter++] = new Manager(name, salary);
+				break;
+
+			case 2:
+				// add new HR
+				System.out.print("\nEnter name of the HR : ");
+				name = sc.next();
+				System.out.print("Enter salary of the HR : ");
+				salary = sc.nextDouble();
+				System.out.print("Enter bonus per hire of the HR : ");
+				bonusPerHire = sc.nextDouble();
+				emp[counter++] = new HR(name, salary, bonusPerHire);
+				break;
+
+			case 3:
+				// display all employees
+				for (int i = 0; i < counter; i++) {
+					System.out.println(emp[i]);
+				}
+				break;
+
+			case 4:
+				System.out.print("\nEnter employee ID : ");
+				empId = sc.nextInt();
+
+				for (int i = 0; i < counter; i++) {
+					if (empId == emp[i].getEmpId()) {
+						if (emp[i] instanceof HR) {
+							HR h = (HR) emp[i];
+							System.out.print("Enter number of hires: ");
+							numberOfHires = sc.nextInt();
+							h.setNoOfHires(numberOfHires);
+						}
+						else
+						{
+							System.out.println("Error :: Can not set number of hires for manager object/employee");
+						}
+					}
+				}
+
+				break;
+				
+			case 5 :
+				System.out.print("\nEnter employee ID : ");
+				empId = sc.nextInt();
+				for (int i = 0; i < counter; i++) {
+					if (empId == emp[i].getEmpId()) {
+						System.out.print("\nEnter name of the employee : ");
+						name = sc.next();
+						emp[i].setName(name);
+					}
+				}
+				
+				break;
+
+			default:
+				System.out.println("Error : Invalid choice. Try again!!!");
+				break;
+			}
+		} while (userChoice > 0);
+
 	}
 
 }
