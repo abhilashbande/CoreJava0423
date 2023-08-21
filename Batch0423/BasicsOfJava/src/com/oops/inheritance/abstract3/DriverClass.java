@@ -4,14 +4,19 @@ public class DriverClass {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Dog d1 = new Dog();
-		d1.speak();
+//		Dog d1 = new Dog();
+//		d1.speak();
+//		
+//		Cat c1= new Cat();
+//		c1.speak();
+//		
+//		Ant a1 = new Ant();
+//		a1.speak();
 		
-		Cat c1= new Cat();
-		c1.speak();
+//		Cat c1 = new Cat();
+//		Ant a1 = (Ant)c1;
+//		a1.speak();
 		
-		Ant a1 = new Ant();
-		a1.speak();
 		
 	}
 
