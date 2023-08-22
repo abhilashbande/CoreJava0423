@@ -1,8 +1,7 @@
 package com.core.interfaceJ;
 
 public class OnePlus implements IMobile {
-	public static int test;
-	
+
 	@Override
 	public String ram() {
 		return "8GB";

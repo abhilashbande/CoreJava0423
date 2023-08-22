@@ -1,5 +1,7 @@
 package com;
 
+import com.oops.inheritance.*;
+
 public class HelloWorld {
 
 	public static void main(String[] args) {

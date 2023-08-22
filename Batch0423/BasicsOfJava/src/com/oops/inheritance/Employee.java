@@ -1,5 +1,6 @@
 package com.oops.inheritance;
 
+// is a relation
 public class Employee extends Person {
 	private int empId;
 	private static int nextId;
@@ -44,5 +45,6 @@ public class Employee extends Person {
 	public double calculateSalary() {
 		return salary;
 	}
+
 
 }
