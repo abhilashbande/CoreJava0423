@@ -1,12 +1,11 @@
 package com.core.extra;
 
 public class Parent {
-	public void testMethod() {
-		System.out.println("Parent method...");
-	}
-	
 	public void parentMethod() {
-		System.out.println("Parent method...");
+		System.out.println("Parent class method");
 	}
 	
+	public void anothorMethod() {
+		System.out.println("Parent class another method");
+	}
 }
