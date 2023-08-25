@@ -20,7 +20,7 @@ public class App {
 
 	// 3 types mistake/errors
 	// 1. logical error
-	// 2. compiler/systex error
+	// 2. compiler/syntax error
 	// 3. exceptions
 
 	public static void main(String[] args) {
@@ -67,8 +67,7 @@ public class App {
 				}
 			} catch (Exception e) {
 				System.out.println(e);
-				sc.next();
-				
+				sc.next();				
 			}
 		} while (userChoice != 0);
 
