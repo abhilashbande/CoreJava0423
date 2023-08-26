@@ -23,7 +23,7 @@ public class DriverClass {
 		// TODO Auto-generated method stub
 
 		int userChoice = 0;
-		Employee emp[] = new Employee[20];
+		Employee emp[] = new Employee[5];
 		int counter = 0;
 		int empId = 0, numberOfHires = 0;
 		String name = "";
