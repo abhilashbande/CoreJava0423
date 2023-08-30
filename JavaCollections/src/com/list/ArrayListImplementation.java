@@ -2,8 +2,10 @@ package com.list;
 
 import java.util.ArrayList;
 
-public class ListCollection {
-	static ArrayList<String> list = new ArrayList<String>();
+public class ArrayListImplementation {
+	// default capacity 10
+	// load factor 0.75
+	static ArrayList<String> list = new ArrayList<>();
 
 	private static void addToList() {
 		list.add("Paresh");
@@ -14,10 +16,10 @@ public class ListCollection {
 		list.add(0, "Darshan");
 		list.add(4, "Tanisha");
 		list.add(0, "Seher");
-		list.add(0, "Madhura");
-		list.add("Madhura");
-		list.add(0, "Akash");
-		list.add(2, "Akash");
+//		list.add(0, "Madhura");
+//		list.add("Madhura");
+//		list.add(0, "Akash");
+//		list.add(2, "Akash");
 	}
 
 	private static void printList() {
@@ -57,19 +59,32 @@ public class ListCollection {
 
 		// R
 		printList();
-
-		// U
-		updateRecord();
-
-		// D
-		removeName();
+		list.sort(null);
 		printList();
 
-		System.out.println(list.indexOf("Madhura"));
-		System.out.println(list.lastIndexOf("Madhura"));
+		// U
+//		updateRecord();
+//
+//		// D
+//		removeName();
+//		printList();
+//
+//		System.out.println(list.indexOf("Akash"));
+//		System.out.println(list.lastIndexOf("Madhura"));
+
 
 		// list.clear();
 		// printList();
+		
+		
+		ArrayList<String> newList = new ArrayList<String>();
+		newList.add("Aditi");
+		newList.add("Ajinkya");
+		newList.add("Rohit");
+		newList.add("Nidhi");
+		
+		list.addAll(newList);
+		printList();
 
 	}
 
