@@ -1,6 +1,7 @@
 package com.list;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ArrayListImplementation {
 	// default capacity 10
@@ -13,21 +14,37 @@ public class ArrayListImplementation {
 		list.add("Saurabh");
 		list.add("Latesh");
 		list.add("Prashant");
-		list.add(0, "Darshan");
-		list.add(4, "Tanisha");
-		list.add(0, "Seher");
+//		list.add(0, "Darshan");
+//		list.add(4, "Tanisha");
+//		list.add(0, "Seher");
 //		list.add(0, "Madhura");
-//		list.add("Madhura");
+		list.add("Madhura");
 //		list.add(0, "Akash");
 //		list.add(2, "Akash");
 	}
 
 	private static void printList() {
-		System.out.println(list);
+		// System.out.println(list);
 
 //		for (String name : list) {
 //			System.out.print(name + ", ");
+//			list.remove(name);
 //		}
+
+//		for (int i = 0; i < list.size(); i++) {
+//			System.out.print(list.get(i) + " ");
+//			list.remove(i);
+//		}
+
+		// container
+		// iterators
+		Iterator itr = list.iterator();
+
+		while (itr.hasNext()) {
+			System.out.print(itr.next() + " ");
+			itr.remove();
+		}
+		System.out.println("");
 	}
 
 	private static void removeName() {
@@ -59,8 +76,8 @@ public class ArrayListImplementation {
 
 		// R
 		printList();
-		list.sort(null);
-		printList();
+		// list.sort(null);
+//		printList();
 
 		// U
 //		updateRecord();
@@ -72,19 +89,17 @@ public class ArrayListImplementation {
 //		System.out.println(list.indexOf("Akash"));
 //		System.out.println(list.lastIndexOf("Madhura"));
 
-
 		// list.clear();
 		// printList();
-		
-		
-		ArrayList<String> newList = new ArrayList<String>();
-		newList.add("Aditi");
-		newList.add("Ajinkya");
-		newList.add("Rohit");
-		newList.add("Nidhi");
-		
-		list.addAll(newList);
-		printList();
+
+//		ArrayList<String> newList = new ArrayList<String>();
+//		newList.add("Aditi");
+//		newList.add("Ajinkya");
+//		newList.add("Rohit");
+//		newList.add("Nidhi");
+//		
+//		list.addAll(newList);
+//		printList();
 
 	}
 
