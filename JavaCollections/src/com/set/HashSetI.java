@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class HashSetI {
-	
+
 	// no duplicate values/elements
 	// it uses hashing mechanism - conversion from an object to int
 	static Set<String> set = new HashSet<String>();
@@ -21,48 +21,46 @@ public class HashSetI {
 		set.add(null);
 		set.add(null);
 	}
-	
+
 	// read
 	private static void print() {
 		System.out.println(set);
-		
+
 //		for (String entry : set) {
 //			System.out.print(entry + " ");
 //		}
 	}
-	
-	private static void find() { 
-		if(set.contains("Prachi1234"))
+
+	private static void find() {
+		if (set.contains("Prachi1234"))
 			System.out.println("Element found");
 		else
 			System.out.println("Element not found");
 	}
-	
+
 	// delete
 	private static void remove() {
-		if(set.remove("Akash"))
+		if (set.remove("Akash"))
 			System.out.println("Element removed");
 		else
 			System.out.println("can not remove element");
 	}
-	
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+
 		// create
 		addToList();
-		
+
 		// read
 		print();
-		
-		
+
 //		// find
 //		find();
 //		
 //		// delete
 //		remove();
 //		print();
-		
 
 	}
 

@@ -44,17 +44,19 @@ class Student implements Comparable<Student> {
 
 	@Override
 	public int compareTo(Student o) {
-		if (this.marks > o.marks)
+		if(this.marks > o.marks)
 			return 1;
-		else if (this.marks < o.marks)
+		else if(this.marks < o.marks)
 			return -1;
-		return 0;
+		else
+			return 0;
+		
 	}
 
 }
 
 public class ArrayListI {
-
+	
 	private ArrayList<Student> students = new ArrayList<Student>();
 
 	private void addStudents(String name, double marks) {
@@ -75,7 +77,7 @@ public class ArrayListI {
 	private void print() {
 		// System.out.println(students);
 		for (Student student : students) {
-			System.out.println(student);
+			System.out.println(student.getRollNo() + " - " +student.getName() + " - " + student.getMarks());
 		}
 	}
 
@@ -90,8 +92,8 @@ public class ArrayListI {
 		app.print();
 
 		System.out.println("*********************************");
-		// app.sort();
-		// app.print();
+		app.sort();
+		app.print();
 
 		// System.out.println(i1.compareTo(i2));
 
