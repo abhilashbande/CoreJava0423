@@ -42,7 +42,7 @@ public class HashMapI {
 	private static void find() {
 		if (m.containsKey(4)) {
 			String data = m.get(4);
-			System.err.println(data);
+			System.out.println(data);
 		} else {
 			System.out.println("Key is not present in the map");
 		}
