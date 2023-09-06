@@ -3,7 +3,6 @@ package com.core.composition;
 // composition -> has a relation
 // inheritance -> is a relation
 
-
 public class Car {
 
 	// doors

@@ -17,6 +17,7 @@ public class App {
 	// deserialization = converting file(stream) into objects
 
 	private static void writeToFile() {
+		
 		try {
 			ArrayList<Student> list = new ArrayList<Student>();
 			list.add(new Student("Purva", 65));

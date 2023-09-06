@@ -10,13 +10,14 @@ class AgeRestrictionException extends Exception {
 
 public class MainClass {
 
-	private static int acceptAge() throws Exception {
+	private static int acceptAge() throws AgeRestrictionException {
 		System.out.print("Enter age : ");
 		Scanner sc = new Scanner(System.in);
 		int age = sc.nextInt();
 
 		if (age < 18) {
 			// throw an exception -> AgeRestrictionException
+			//AgeRestrictionException myException = new AgeRestrictionException("Exception : Age can not be lesser than 18");
 			throw new AgeRestrictionException("Exception : Age can not be lesser than 18");
 		}
 
@@ -49,7 +50,7 @@ public class MainClass {
 
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args)  {
 
 		try {
 			int age = acceptAge();
@@ -62,6 +63,8 @@ public class MainClass {
 		} finally {
 			// close the file.
 		}
+		
+
 	}
 
 }

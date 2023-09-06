@@ -1,75 +1,81 @@
 package com.Sync;
 
 // synchronization
+
 // 1. synchronized methods
 // 2. synchronized blocks
 // 3. synchronized static methods
 
 class Printer {
+	public synchronized void printDocuments(int numberOfPages, String documentName) {
+//		synchronized (this) {
+			for (int i = 1; i <= numberOfPages; i++) {
+				try {
+					System.out.println("Name of the thread is :: " + Thread.currentThread().getName());
+					System.out.println("Printing " + documentName + "\tPageNo#" + i);
+					int no = 10/0;
+					Thread.sleep(500);
+					
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+//		}
+	}
+}
+
+class Rajat extends Thread {
 	private String name;
-	private int number;
+	private Printer pRef;
 
-	public Printer(String name, int number) {
+	public Rajat(Printer p, String name) {
 		super();
+		pRef = p;
 		this.name = name;
-		this.number = number;
-	}
 
-	synchronized public void printTable() {
-		System.out.println(name);
-		for (int i = 1; i <= 10; i++) {
-			System.out.print(i * number + " ");
-		}
-		System.out.println("\n");
-	}
-}
-
-class TablePrinter1 extends Thread {
-	Printer p;
-
-	public TablePrinter1(Printer p) {
-		super();
-		this.p = p;
 	}
 
 	@Override
 	public void run() {
-		p.printTable();
+		pRef.printDocuments(5, name);
 	}
-	
-	
 }
 
-class TablePrinter2 extends Thread {
-	Printer p;
+class Nidhi extends Thread {
+	private String name;
+	private Printer pRef;
 
-	public TablePrinter2(Printer p) {
+	public Nidhi(Printer p, String name) {
 		super();
-		this.p = p;
+		pRef = p;
+		this.name = name;
 	}
 
 	@Override
 	public void run() {
-		p.printTable();
+		pRef.printDocuments(5, name);
 	}
-	
-	
 }
 
 public class App {
 
 	public static void main(String[] args) throws InterruptedException {
-		Printer p = new Printer("Table of Three", 3);
-		TablePrinter1 p1 = new TablePrinter1(p);
-		TablePrinter2 p2 = new TablePrinter2(p);
-		//TablePrinter p3 = new TablePrinter(new Printer("Table of seven", 7));
-		//TablePrinter p4 = new TablePrinter(new Printer("Table of nine", 9));
-
-		p1.start();
-		p2.start();
-		//p3.start();
-		//p4.start();
-
+		System.out.println(" **** Application started ****");
+		Printer p = new Printer();
+		Rajat rajat = new Rajat(p, "Rajat");
+		
+		Nidhi nidhi = new Nidhi(p, "Nidhi");
+		
+		//Rajat cv = new Rajat(p, "Rajat's CV");
+		
+		//Nidhi notes = new Nidhi(p, "Nidhi's Java Notes");
+		
+		rajat.start();
+		nidhi.start();
+		//cv.start();
+		//notes.start();
+		
+		System.out.println(" **** Application ended ****");		
 	}
 
 }
