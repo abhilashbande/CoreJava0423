@@ -1,17 +1,25 @@
 package com.core.LocalInnerClass;
 
+
+
+
 public class Door {
 	// local inner class
 	public boolean isLocked(String key) {
+		
 		class Lock {
-			public boolean isLock(String key) {
-				if(key.equals("asdf")) {
+			public boolean locked(String username) {
+				if(username.equals("admin"))
 					return false;
-				} else {
+				else
 					return true;
-				}
 			}
 		}
-		return new Lock().isLock(key);
+		
+//		Lock lock = new Lock();
+//		boolean returnValue = lock.locked(key);
+//		return returnValue;
+		
+		return new Lock().locked(key);		
 	}
 }

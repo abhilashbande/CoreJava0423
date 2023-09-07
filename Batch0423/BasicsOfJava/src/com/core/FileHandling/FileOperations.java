@@ -26,13 +26,13 @@ public class FileOperations {
 	// write content to the file
 	private static void writeToFile(String fileName, String content, boolean append) {
 		try {
-			FileWriter writer = new FileWriter(fileName, append);
-			writer.write(content);
+			FileWriter writer = new FileWriter(fileName, true);
+			writer.write("\nNow we are going to append the date in this file.");
 			writer.close();
 			System.out.println("Writing is completed...");
 		} catch (IOException e) {
-			System.out.println(e);
-			System.out.println("Exception raised while writing file : " + fileName);
+			System.err.println(e);
+			System.err.println("Exception raised while writing file : " + fileName);
 		}
 	}
 
@@ -42,8 +42,7 @@ public class FileOperations {
 		try {
 			Scanner sc = new Scanner(file);
 			while (sc.hasNextLine()) {
-				String line = sc.nextLine();
-				System.out.println(line);
+				System.out.println(sc.nextLine());
 			}
 			sc.close();
 		} catch (FileNotFoundException e) {
@@ -64,12 +63,11 @@ public class FileOperations {
 		String file = "test.txt";
 
 		// create a file
-		// createFile(file);
+		 createFile(file);
 
 		// write to file
 		// writeToFile(file,
-		// "Chandrayaan-3 is the third Indian lunar exploration mission under the Indian
-		// Space Research Organisation's (ISRO) Chandrayaan programme.",
+		// "Yesterday was 6th Sept 2023",
 		// false);
 		//
 		// writeToFile(file,
@@ -78,10 +76,10 @@ public class FileOperations {
 		// true);
 
 		// read a file
-		// readFile(file);
+		//readFile(file);
 
 		// delete a file
-		// deleteFile(file);
+		//deleteFile(file);
 	}
 
 }

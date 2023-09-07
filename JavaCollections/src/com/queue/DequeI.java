@@ -39,10 +39,10 @@ public class DequeI {
 		addToQueue();
 
 		// q.peek(); // gives the first element from the queue
-		System.out.println("Peek First : " + q.peekFirst());
-		System.out.println("Peek Last : " + q.peekLast());
 		// remove
-		// remove();
+		 remove();
+		 System.out.println("Peek First : " + q.peekFirst());
+		 System.out.println("Peek Last : " + q.peekLast());
 	}
 
 }

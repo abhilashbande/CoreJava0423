@@ -13,7 +13,6 @@ class Printer {
 				try {
 					System.out.println("Name of the thread is :: " + Thread.currentThread().getName());
 					System.out.println("Printing " + documentName + "\tPageNo#" + i);
-					int no = 10/0;
 					Thread.sleep(500);
 					
 				} catch (InterruptedException e) {
@@ -74,6 +73,9 @@ public class App {
 		nidhi.start();
 		//cv.start();
 		//notes.start();
+		
+		rajat.join();
+		nidhi.join();
 		
 		System.out.println(" **** Application ended ****");		
 	}
